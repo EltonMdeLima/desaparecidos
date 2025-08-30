@@ -1,36 +1,57 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+# Ignora a pasta node_modules onde as dependências do projeto são armazenadas.
+# É importante não versionar as dependências diretamente no repositório.
+node_modules/
+
+# Ignora arquivos do Yarn PnP (Plug'n'Play) caso esteja utilizando essa configuração.
+.pnp/
 .pnp.js
 
 # testing
-/coverage
+# Ignora a pasta de cobertura de testes gerada pelo Jest ou outras ferramentas de testes.
+coverage/
 
 # next.js
-/.next/
-/out/
+# Ignora as pastas de build do Next.js, como `.next/` (gerada em dev e build) e `out/` (gerada com export).
+.next/
+out/
 
 # production
-/build
+# Ignora a pasta de build em produção, que é gerada quando o comando `next build` é executado.
+build/
 
 # misc
+# Ignora arquivos do sistema operacional (ex: .DS_Store no macOS) e certificados (ex: *.pem).
 .DS_Store
 *.pem
 
 # debug
+# Ignora arquivos de log gerados por npm/yarn durante a execução, úteis apenas para debug.
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # local env files
+# Ignora arquivos de configuração local do ambiente (como variáveis de ambiente sensíveis).
 .env*.local
 .env
 
 # vercel
-.vercel
+# Ignora arquivos e pastas específicas do Vercel que são criadas durante o deploy.
+.vercel/
 
 # typescript
+# Ignora arquivos relacionados à compilação do TypeScript (ex: arquivos de build e ambiente).
 *.tsbuildinfo
 next-env.d.ts
+
+# IDEs e ferramentas de desenvolvimento
+# Ignora arquivos de configuração específicos de IDEs, como VSCode, que não são relevantes para o repositório.
+.vscode/
+.idea/
+
+# Logs do sistema operacional
+# Ignora arquivos de log gerados pelo sistema operacional, que podem ser criados em qualquer sistema.
+*.log
