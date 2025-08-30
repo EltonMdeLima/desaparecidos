@@ -55,21 +55,27 @@ A aplicação permite:
 - **Integração:** API da Polícia Judiciária Civil de Mato Grosso  
 - **Versionamento e CI/CD:** Git, GitHub Actions / Jenkins  
 - **Containerização:** Docker & Docker Compose  
+- **Testes:** Jest (com configuração e setup)
 
 ---
 
 ## 📂 Estrutura do Projeto
 ```
 desaparecidos/
-├─ 🗄️ backend/       # API, serviços e integração com o banco de dados
 ├─ 🌐 frontend/      # Next.js + TailwindCSS
 │ ├─ 📄 pages/       # Páginas Next.js
-│ ├─ 🧩 components/  # Componentes reutilizáveis
-│ └─ 🖼️ public/      # Assets (imagens, ícones, fontes)
+│ ├─ 🧩 components/  # Componentes reutilizáveis (ex: Footer, Header, Navbar)
+│ ├─ 🖼️ public/      # Assets (imagens, ícones, fontes)
+│ └─ 🧪 tests/        # Testes automatizados com Jest
 ├─ 🐳 docker/        # Configurações Docker e Docker Compose
 ├─ 📖 docs/          # Documentação técnica, manuais e guias
-├─ 🧪 tests/         # Testes automatizados (frontend e backend)
-└─ 📝 README.md      # Este arquivo
+├─ 📄 jest.config.js # Configuração do Jest
+├─ 🧪 jest.setup.js  # Setup inicial do Jest
+├─ 📄 next.config.js # Configuração do Next.js
+├─ 📖 LICENSE        # Arquivo de licença
+├─ 📝 README.md      # Este arquivo
+└─ 📦 package.json   # Dependências do projeto
+
 ```
 ---
 ## 🚀 Como Executar Localmente
@@ -79,13 +85,14 @@ desaparecidos/
 - Node.js >= 20  
 - Docker & Docker Compose  
 - Git  
+- Jest (Testes Automatizados)
 
 ### Passos
 
 1. Clone o repositório:
 ```
-git clone git@github.com:seu-usuario/desaparecidas.git
-cd desaparecidas
+git clone git@github.com:EltonMdeLima/desaparecidos.git
+cd desaparecidos
 ```
 
 2. Configure variáveis de ambiente:
@@ -98,24 +105,29 @@ cp .env.example .env # Edite as variáveis conforme necessário
 docker compose up -d
 ```
 
-5. Execute o frontend Next.js:
+4. Execute o frontend Next.js:
 ```
 cd frontend
 pnpm install
 pnpm dev
 ```
+
+5. Testes Automatizados (Jest)
+```
+npm run test
+```
 ---
 ## 🛠 Roadmap do Projeto
 
-| Fase   | Funcionalidade | Status   | Observações |
-|----------|----------------|--------------|-------------|
-| 🔹 Backend | Estrutura inicial e integração com API oficial | ✅ Concluído | Pronto para testes |
-| 🔹 Frontend | Interface Next.js responsiva | ✅ Concluído | Layouts básicos implementados |
-| 🔹 Upload | Envio de fotos e observações | ✅ Concluído | Validação de formatos e tamanho |
-| 🔹 Autenticação | Sistema de login para usuários | ⚪ Desenvolvimento | Implementar JWT ou OAuth |
-| 🔹 Dashboard | Painel administrativo para autoridades | ⚪ Desenvolvimento | Visualização de informações enviadas |
-| 🔹 Testes | Testes automatizados (frontend e backend) | ⚪ Planejado | Cobertura mínima de 80% |
-| 🔹 Deploy | Produção via Docker + CI/CD | ⚪ Planejado | Pipeline de deploy completo |
+| Fase        | Funcionalidade                             | Status        | Observações              |
+|-------------|--------------------------------------------|---------------|--------------------------|
+| 🔹 Backend  | Estrutura inicial e integração com API oficial | ✅ Concluído   | Pronto para testes       |
+| 🔹 Frontend | Interface Next.js responsiva               | ✅ Concluído   | Layouts básicos implementados |
+| 🔹 Upload   | Envio de fotos e observações               | ✅ Concluído   | Validação de formatos e tamanho |
+| 🔹 Testes   | Testes automatizados (frontend e backend)  | ✅ Em andamento | Cobertura mínima de 80% |
+| 🔹 Autenticação | Sistema de login para usuários          | ⚪ Desenvolvimento | Implementar JWT ou OAuth |
+| 🔹 Dashboard | Painel administrativo para autoridades    | ⚪ Desenvolvimento | Visualização de informações enviadas |
+| 🔹 Deploy   | Produção via Docker + CI/CD                | ⚪ Planejado   | Pipeline de deploy completo |
 
 ---
 ## 🤝 Contribuição

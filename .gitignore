@@ -12,6 +12,7 @@ node_modules/
 # testing
 # Ignora a pasta de cobertura de testes gerada pelo Jest ou outras ferramentas de testes.
 coverage/
+jest-*.log
 
 # next.js
 # Ignora as pastas de build do Next.js, como `.next/` (gerada em dev e build) e `out/` (gerada com export).
@@ -32,6 +33,7 @@ build/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # local env files
 # Ignora arquivos de configuração local do ambiente (como variáveis de ambiente sensíveis).
@@ -55,3 +57,7 @@ next-env.d.ts
 # Logs do sistema operacional
 # Ignora arquivos de log gerados pelo sistema operacional, que podem ser criados em qualquer sistema.
 *.log
+
+# Additional file to ignore
+public/images/
+node_modules/.cache/
