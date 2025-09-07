@@ -22,8 +22,8 @@ export default function Home() {
     if (authStatus === 'idle') {
       dispatch(login({
         // Substitua por suas credenciais reais
-        username: 'elton',
-        password: 'elton',
+        username: 'seu_usuario',
+        password: 'sua_senha',
       }));
     }
   }, [authStatus, dispatch]); // Dependências: re-executa se o status de autenticação mudar
